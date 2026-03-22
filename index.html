@@ -3,131 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios de Construcción y Mantenimiento</title>
+    <title>Servicios de Construcción y Mantenimiento Profesional</title>
+    
     <style>
-        .header-personalizado {
-    background: #2c3e50;
-    color: white;
-    padding: 2rem;
-    display: flex; /* Esto pone el texto y la foto en la misma fila */
-    justify-content: space-between; /* Empuja el texto a la izquierda y la foto a la derecha */
-    align-items: center; /* Los centra verticalmente */
-    flex-wrap: wrap; /* Si el celular es muy pequeño, la foto bajará para no amontonarse */
-}
+        /* --- ESTILOS GENERALES --- */
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #f4f7f6; }
+        .container { padding: 20px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; margin-top: 40px; }
 
-.texto-header {
-    flex: 1; /* El texto toma el espacio disponible */
-    text-align: left;
-}
+        /* --- HEADER CON FOTO DE PERFIL --- */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .texto-header { flex: 1; min-width: 250px; }
+        .texto-header h1 { margin: 0; font-size: 1.8rem; }
+        .foto-perfil img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #27ae60;
+            object-fit: cover;
+            margin-left: 20px;
+        }
 
-.foto-perfil img {
-    width: 100px; /* Tamaño de la foto */
-    height: 100px;
-    border-radius: 50%; /* Esto hace que la foto sea circular */
-    border: 3px solid #27ae60; /* Un borde verde para que resalte */
-    object-fit: cover; /* Evita que tu cara se vea estirada */
-    margin-left: 20px;
-}
+        /* --- SECCIÓN SERVICIOS --- */
+        .servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #fff; text-align: center; }
+        .card h3 { color: #27ae60; margin-top: 0; }
 
-/* Ajuste para celulares */
-@media (max-width: 600px) {
-    .header-personalizado {
-        text-align: center;
-        flex-direction: column; /* En celular, la foto se pone debajo del título */
-    }
-    .foto-perfil img {
-        margin-left: 0;
-        margin-top: 15px;
-    }
-}
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; }
-        header { background: #2c3e50; color: white; padding: 2rem; text-align: center; }
-        .container { padding: 2rem; max-width: 800px; margin: auto; }
-        .servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #f9f9f9; }
-        .cta-button { display: block; background: #27ae60; color: white; text-align: center; 
-                     padding: 15px; margin: 20px 0; text-decoration: none; font-weight: bold; border-radius: 5px; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; }
+        /* --- GALERÍA DE FOTOS --- */
+        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .foto-proyecto { border: 1px solid #eee; padding: 5px; border-radius: 8px; text-align: center; background: #fafafa; }
+        .foto-proyecto img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+        .foto-proyecto p { font-size: 0.9rem; color: #666; margin: 8px 0; }
+
+        /* --- MAPA DE GOOGLE --- */
+        .mapa-contenedor { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: 8px; margin-top: 20px; border: 1px solid #ddd; }
+        .mapa-contenedor iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; }
+
+        /* --- BOTÓN WHATSAPP --- */
+        .btn-whatsapp {
+            display: block; background: #25D366; color: white; text-align: center; 
+            padding: 18px; margin: 30px 0; text-decoration: none; font-weight: bold; 
+            border-radius: 50px; font-size: 1.2rem; transition: 0.3s;
+        }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.02); }
+
+        /* --- AJUSTES CELULAR --- */
+        @media (max-width: 600px) {
+            header { text-align: center; justify-content: center; }
+            .foto-perfil img { margin: 20px 0 0 0; }
+            .texto-header { text-align: center; }
+        }
     </style>
 </head>
 <body>
 
-<header class="header-personalizado">
+<header>
     <div class="texto-header">
-        <h1>Construcción y Mantenimiento Profesional</h1>
-        <p>Soluciones en Albañilería, Plomería, Electricidad y más</p>
+        <h1>Servicios Profesionales de Construcción</h1>
+        <p>Albañilería • Pisos • Plomería • Electricidad • Pintura</p>
     </div>
     <div class="foto-perfil">
-        <img src="perfil.jpg" alt="Eduardo Martínez - Especialista en Construcción">
+        <img src="perfil.jpg" alt="Tu Nombre - Especialista">
     </div>
-</header>
-    <h1>Construcción y Mantenimiento Profesional</h1>
-    <p>Soluciones en Albañilería, Plomería, Electricidad y más</p>
 </header>
 
 <div class="container">
+    
     <h2>Nuestros Servicios</h2>
     <div class="servicios">
-        <div class="card"><h3>Albañilería</h3><p>Construcción, muros y acabados finos.</p></div>
-        <div class="card"><h3>Pisos</h3><p>Colocación de loseta, cerámicos y porcelanato.</p></div>
-        <div class="card"><h3>Plomería</h3><p>Instalaciones y reparación de fugas.</p></div>
-        <div class="card"><h3>Electricidad</h3><p>Instalaciones completas y mantenimiento.</p></div>
-        <div class="card"><h3>Pintura</h3><p>Interiores y exteriores con acabados de calidad.</p></div>
+        <div class="card"><h3>Albañilería</h3><p>Construcción de muros, losas y acabados finos.</p></div>
+        <div class="card"><h3>Pisos</h3><p>Colocación de loseta, mármol y porcelanatos.</p></div>
+        <div class="card"><h3>Plomería</h3><p>Instalaciones hidráulicas y reparación de fugas.</p></div>
+        <div class="card"><h3>Electricidad</h3><p>Tableros, cableado y mantenimiento general.</p></div>
     </div>
-<h2 style="margin-top:40px;">Galería de Trabajos Realizados</h2>
-<div class="galeria">
-    <div class="foto-proyecto">
-        <img src="albañileria1.jpg" alt="Muro de ladrillo aparente">
-        <p>Ampliación de recámara</p>
-    </div>
-    <div class="foto-proyecto">
-        <img src="piso1.jpg" alt="Piso de porcelanato">
-        <p>Colocación de piso 60x60</p>
-    </div>
-    <div class="foto-proyecto">
-        <img src="baño1.jpg" alt="Instalación de porcelanatos y muebles">
-        <p>Remodelación de baño completo</p>
-    </div>
-    <div class="foto-proyecto">
-        <img src="pintura1.jpg" alt="Pintura de fachada">
-        <p>Acabados en exteriores</p>
-    </div>
-</div>
 
-<style>
-    .galeria {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
-    }
-    .foto-proyecto {
-        border: 1px solid #eee;
-        padding: 5px;
-        border-radius: 8px;
-        text-align: center;
-        background: #fff;
-    }
-    .foto-proyecto img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover; /* Esto hace que todas las fotos midan lo mismo sin deformarse */
-        border-radius: 5px;
-    }
-    .foto-proyecto p {
-        font-size: 0.9rem;
-        color: #666;
-        margin: 10px 0;
-    }
-</style>
-    <a href="https://wa.me/7209262287" class="cta-button">Solicitar Presupuesto por WhatsApp</a>
+    <h2>Galería de Proyectos</h2>
+    <div class="galeria">
+        <div class="foto-proyecto"><img src="albañileria1.jpg" alt="Obra de albañilería"><p>Ampliaciones</p></div>
+        <div class="foto-proyecto"><img src="piso1.jpg" alt="Colocación de piso"><p>Pisos terminados</p></div>
+        <div class="foto-proyecto"><img src="baño1.jpg" alt="Trabajo de baño"><p>Remodelaciones</p></div>
+        <div class="foto-proyecto"><img src="pintura1.jpg" alt="Trabajo de pintura"><p>Acabados y pintura</p></div>
+    </div>
 
-    <h2>¿Por qué elegirnos?</h2>
-    <ul>
-        <li>Presupuestos sin compromiso(posible cargo por visita y distancia).</li>
-        <li>Trabajos garantizados y puntualidad.</li>
-        <li>Experiencia comprobable en obra civil y residencial(clientes satisfechos).</li>
-    </ul>
+    <h2>Ubicación y Cobertura</h2>
+    <p>Atendemos trabajos en toda la ciudad y zonas aledañas.</p>
+    <div class="mapa-contenedor">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11340.536341235316!2d-99.1412733!3d19.4326077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMDgnMjguNiJX!5e0!3m2!1ses!2smx!4v1620000000000!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <a href="https://wa.me/TU_NUMERO_AQUI" class="btn-whatsapp">
+        💬 Pedir Presupuesto por WhatsApp
+    </a>
+
+    <footer style="text-align: center; color: #888; margin-top: 40px; font-size: 0.8rem;">
+        <p>&copy; 2026 - Servicios de Construcción y Mantenimiento. Todos los derechos reservados.</p>
+    </footer>
+
 </div>
 
 </body>
